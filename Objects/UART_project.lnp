@@ -1,5 +1,8 @@
 --cpu=Cortex-M4.fp.sp
 ".\objects\main.o"
+".\objects\state_machine.o"
+".\objects\uart.o"
+".\objects\gpio_functions.o"
 ".\objects\startup_msp432p401r_uvision.o"
 ".\objects\system_msp432p401r.o"
 ".\objects\state_machine_1.o"

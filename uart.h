@@ -1,4 +1,5 @@
 #ifndef UART_H
+#define UART_H
 #include <msp.h>
 #include <stdlib.h>
 #include <string.h>

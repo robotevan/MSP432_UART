@@ -29,46 +29,28 @@ Project File Date:  11/29/2020
 Build target 'Target 1'
 Note: source file '.\state_machine.c' - object file renamed from '.\Objects\state_machine.o' to '.\Objects\state_machine_1.o'.
 compiling state_machine.c...
-state_machine.c(12): error:  #146: too many initializer values
-  	{STATE_1, STATE_3},
-state_machine.c(15): error:  #146: too many initializer values
-  	{STATE_2, STATE_0},
-state_machine.c(18): error:  #146: too many initializer values
-  	{STATE_3, STATE_1},
-state_machine.c(21): error:  #146: too many initializer values
-  	{STATE_0, STATE_2}
-state_machine.c(32): warning:  #940-D: missing return statement at end of non-void function "sm_get_state" 
-  state_t sm_get_state(void){}
-state_machine.c(37): warning:  #940-D: missing return statement at end of non-void function "sm_init" 
-  sm_instance sm_init(state_t initial_state){}
-state_machine.c(38): warning:  #1-D: last line of file ends without a newline
-  	
-state_machine.c(9): warning:  #177-D: variable "state_table"  was declared but never referenced
-  static state_t state_table[STATE_MAX][EVT_MAX] = {
-state_machine.c: 4 warnings, 4 errors
-compiling state_machine.c...
-state_machine.c(12): error:  #146: too many initializer values
-  	{STATE_1, STATE_3},
-state_machine.c(15): error:  #146: too many initializer values
-  	{STATE_2, STATE_0},
-state_machine.c(18): error:  #146: too many initializer values
-  	{STATE_3, STATE_1},
-state_machine.c(21): error:  #146: too many initializer values
-  	{STATE_0, STATE_2}
-state_machine.c(32): warning:  #940-D: missing return statement at end of non-void function "sm_get_state" 
-  state_t sm_get_state(void){}
-state_machine.c(37): warning:  #940-D: missing return statement at end of non-void function "sm_init" 
-  sm_instance sm_init(state_t initial_state){}
-state_machine.c(38): warning:  #1-D: last line of file ends without a newline
-  	
-state_machine.c(9): warning:  #177-D: variable "state_table"  was declared but never referenced
-  static state_t state_table[STATE_MAX][EVT_MAX] = {
-state_machine.c: 4 warnings, 4 errors
 compiling main.c...
-main.c(99): warning:  #111-D: statement is unreachable
+main.c(58): warning:  #111-D: statement is unreachable
   	return 1;
 main.c: 1 warning, 0 errors
-".\Objects\UART_project.axf" - 8 Error(s), 9 Warning(s).
+compiling state_machine.c...
+linking...
+.\Objects\UART_project.axf: Error: L6200E: Symbol sm_init multiply defined (by state_machine_1.o and state_machine.o).
+.\Objects\UART_project.axf: Error: L6200E: Symbol sm_trigger multiply defined (by state_machine_1.o and state_machine.o).
+.\Objects\UART_project.axf: Error: L6200E: Symbol __asm___15_state_machine_c_658d5514____REV16 multiply defined (by state_machine_1.o and state_machine.o).
+.\Objects\UART_project.axf: Error: L6200E: Symbol __asm___15_state_machine_c_658d5514____REVSH multiply defined (by state_machine_1.o and state_machine.o).
+.\Objects\UART_project.axf: Error: L6200E: Symbol __asm___15_state_machine_c_658d5514____RRX multiply defined (by state_machine_1.o and state_machine.o).
+.\Objects\UART_project.axf: Error: L6200E: Symbol sm_free multiply defined (by state_machine_1.o and state_machine.o).
+.\Objects\UART_project.axf: Error: L6200E: Symbol sm_get_state multiply defined (by state_machine_1.o and state_machine.o).
+.\Objects\UART_project.axf: Error: L6200E: Symbol sm_reset multiply defined (by state_machine_1.o and state_machine.o).
+.\Objects\UART_project.axf: Error: L6200E: Symbol state_0_func multiply defined (by state_machine_1.o and state_machine.o).
+.\Objects\UART_project.axf: Error: L6200E: Symbol state_1_func multiply defined (by state_machine_1.o and state_machine.o).
+.\Objects\UART_project.axf: Error: L6200E: Symbol state_2_func multiply defined (by state_machine_1.o and state_machine.o).
+.\Objects\UART_project.axf: Error: L6200E: Symbol state_3_func multiply defined (by state_machine_1.o and state_machine.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 12 error messages.
+".\Objects\UART_project.axf" - 12 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
