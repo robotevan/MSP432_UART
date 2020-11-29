@@ -389,14 +389,14 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>uart0_driver.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\uart0_driver.h</FilePath>
+              <FileName>state_machine.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\state_machine.c</FilePath>
             </File>
             <File>
-              <FileName>uart0_driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\uart0_driver.c</FilePath>
+              <FileName>state_machine.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\state_machine.h</FilePath>
             </File>
           </Files>
         </Group>
