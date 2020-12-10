@@ -22,6 +22,8 @@ void init_LED_red(void){
 	P1SEL0 &= ~(RED_LED); // set as GPIO
 	P1SEL1 &= ~(RED_LED);
 	P1DIR |= (RED_LED);
+	set_red_led(0); // why not reuse function if i wrote it
+	set_rgb_led(0);
 }
 
 
@@ -47,4 +49,10 @@ void set_rgb_led(uint8_t colour){
 	}else{ // if incorrect turn off
 		P2OUT = (uint8_t)0;
 	}
+}
+
+void init_switch_interrupts(void){
+	NVIC_SetPriority(PORT1_IRQn, 2); // Set priority of port 1 interrupts
+	NVIC_ClearPendingIRQ(PORT1_IRQn); //  Clear pending interrupts for port1
+	NVIC_EnableIRQ(PORT1_IRQn); // Enable interrupts for port 1 in nvic
 }

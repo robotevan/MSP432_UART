@@ -389,16 +389,6 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>state_machine.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\state_machine.c</FilePath>
-            </File>
-            <File>
-              <FileName>state_machine.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\state_machine.h</FilePath>
-            </File>
-            <File>
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\uart.c</FilePath>
@@ -417,6 +407,16 @@
               <FileName>gpio_functions.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\gpio_functions.h</FilePath>
+            </File>
+            <File>
+              <FileName>state_machine.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\state_machine.c</FilePath>
+            </File>
+            <File>
+              <FileName>state_machine.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\state_machine.h</FilePath>
             </File>
           </Files>
         </Group>

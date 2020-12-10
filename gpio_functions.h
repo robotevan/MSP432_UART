@@ -15,6 +15,7 @@
 #define RGB_LED_B (uint8_t)(1<<2) // port 2 pin 2
 
 
+void init_switch_interrupts(void);
 void init_switches(void);
 void init_LED_rgb(void);
 void init_LED_red(void);

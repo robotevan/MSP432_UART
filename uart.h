@@ -12,5 +12,4 @@ void init_uart0(void);
 void init_uart0_interrupts(void);
 void transmit(char *msg);
 
-
 #endif

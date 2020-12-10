@@ -9,6 +9,7 @@ void init_uart0_pins(void){
 	P1SEL1 &= (uint8_t)~(UART0RXPIN | UART0TXPIN); 
 }
 
+
 /*
 Initialize UART, using even bit parity, SMCLK (3.0MHZ) source clock, 8 bit data mode
 */
@@ -30,7 +31,7 @@ Enable interrupts for UART0, GLOBAL INTERRUPTS NOT ENABLED HERE!
 */
 void init_uart0_interrupts(void){
 	// Enable interrupts on RX and TX
-	EUSCI_A0->IE |= (UCTXIE | UCRXIE);
+	EUSCI_A0->IE |= (UCRXIE);
 	NVIC_SetPriority(EUSCIA0_IRQn, 3);
 	NVIC_EnableIRQ( EUSCIA0_IRQn );
 	NVIC_ClearPendingIRQ(EUSCIA0_IRQn);
@@ -42,7 +43,8 @@ Function to send a string,  takes a char array (null terminated string)
 void transmit(char *msg){
 	int index;
 	for (index = 0; index < strlen(msg); index ++){  // Iterate over every char (charlen = 8bit, same as TXBUF)
-		while (EUSCI_A0->STATW & UCBUSY); // Wait if busy sending/receiving
+		while (!(EUSCI_A0->IFG & EUSCI_A_IFG_TXIFG)); // Wait fop register to become empty
+		EUSCI_A0->IFG &= ~EUSCI_A_IFG_TXIFG; // Reset flag
 		EUSCI_A0->TXBUF = msg[index]; // Load char to TXBUF for send
 	}
 }
