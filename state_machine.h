@@ -1,4 +1,8 @@
- #ifndef STATE_MACHINE_H
+/*
+Code by Evan Pelletier, 101119347
+*/
+
+#ifndef STATE_MACHINE_H
 #include <msp.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -14,6 +18,10 @@ typedef enum{
 	STATE_3,
 } state_t;
 
+struct state_machine { 
+	state_t curr_state;
+};
+
 
 typedef enum{
 	EVT_FORWARDS,
@@ -21,9 +29,6 @@ typedef enum{
 } event_t;
 
 
-struct state_machine { 
-	state_t curr_state;
-};
 
 
 struct state_machine *init_sm(struct state_machine *sm);

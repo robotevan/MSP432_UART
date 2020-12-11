@@ -1,3 +1,7 @@
+/*
+Code by Evan Pelletier, 101119347
+*/
+
 #ifndef UART_H
 #define UART_H
 #include <msp.h>
@@ -10,6 +14,6 @@
 void init_uart0_pins(void);
 void init_uart0(void);
 void init_uart0_interrupts(void);
-void transmit(char *msg);
+void transmit(char msg);
 
 #endif

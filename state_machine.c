@@ -1,3 +1,7 @@
+/*
+Code by Evan Pelletier, 101119347
+*/
+
 #include "state_machine.h"
 
 static state_t state_table[STATE_MAX][EVT_MAX] = {
@@ -47,30 +51,45 @@ void state_3_func(){
 	set_rgb_led(3);
 }
 
+/*
+Define type holding pointer to a functoin
+*/
 typedef struct {
 	void (*function)(void);
 } state_function_t;
 
+
+/*
+Array index by state_t, returns state_function_t holding pointer to function
+*/
 static state_function_t state_functions[] = {
-	{&state_0_func},
-	{&state_1_func},
-	{&state_2_func},
-	{&state_3_func}
+	&state_0_func,
+	&state_1_func,
+	&state_2_func,
+	&state_3_func
 };
 
+/*
+Initilaize the state machine,  starting at state 0
+*/
 struct state_machine *init_sm(struct state_machine *sm){
-	//struct state_machine *sm = malloc(sizeof(struct state_machine));
-	//struct state_machine sm;
 	sm->curr_state = STATE_0;
-	state_functions[sm->curr_state].function();
+	state_functions[sm->curr_state].function(); // Call the function for state 0
 	return sm; 
 }
+
+/*
+Change the state, takes an sm instance as well as an event
+*/
 void sm_trigger(struct state_machine *sm,  event_t evt){
 	sm->curr_state = state_table[sm->curr_state][evt];
 	state_functions[sm->curr_state].function();
 }
 
 
+/*
+Go to a specific state in the state machine
+*/
 void sm_reset(struct state_machine *sm, state_t state){
 	sm->curr_state = state;
 }

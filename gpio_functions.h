@@ -1,3 +1,7 @@
+/*
+Code by Evan Pelletier, 101119347
+*/
+
 #ifndef GPIO_FUNCTIONS_H
 #define GPIO_FUNCTIONS_H
 #include <msp.h>
